@@ -8,6 +8,11 @@ function myFunction() {
   ul = document.getElementById("myUL");
   li = ul.getElementsByTagName("li");
 
+  if (!input) {
+    for (i = 0; i < li.length; i++) {
+      li[i].style.display = "";
+    }
+  }
   for (i = 0; i < li.length; i++) {
     a = li[i].getElementsByTagName("a")[0];
     textValue = a.textContent || a.innerText;
