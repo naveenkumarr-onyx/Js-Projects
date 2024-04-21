@@ -1,6 +1,3 @@
-function search() {
-  myFunction();
-}
 function myFunction() {
   var input, filter, ul, li, a, textValue;
   input = document.getElementById("myInput");
@@ -8,10 +5,8 @@ function myFunction() {
   ul = document.getElementById("myUL");
   li = ul.getElementsByTagName("li");
 
-  if (!input) {
-    for (i = 0; i < li.length; i++) {
-      li[i].style.display = "";
-    }
+  if (!filter) {
+    alert("Enter a value");
   }
   for (i = 0; i < li.length; i++) {
     a = li[i].getElementsByTagName("a")[0];
