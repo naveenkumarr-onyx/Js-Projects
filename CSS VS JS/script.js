@@ -1,17 +1,16 @@
-let range_input = document.querySelectorAll(".main-container input");
-range_input.forEach((input) => input.addEventListener("change", handleChange));
-function handleChange() {}
-// range_input.addEventListener("change", handleChange);
-// function handleChange() {
-//   const suffix = this.dataset.sizing || "";
-//   document.documentElement.style.setProperty(
-//     `--${this.name}`,
-//     this.value + suffix
-//   );
-//   console.log(suffix);
-// }
-// function handleChange() {
-//   // var a = document.getElementsByTagName("img");
-//   var b = 10;
-//   var a = document.getElementsById("img-ctn");
-// }
+let range_inputs = document.querySelectorAll(
+  ".main-container input.range_input"
+);
+
+range_inputs.forEach((input) => input.addEventListener("input", handleChange));
+
+function handleChange() {
+  let value = this.value;
+  let unit = this.dataset.sizing || "";
+  let property = this.dataset.property;
+
+  document.documentElement.style.setProperty(`--${property}`, value + unit);
+  console.log(property);
+  console.log(unit);
+  console.log(value);
+}

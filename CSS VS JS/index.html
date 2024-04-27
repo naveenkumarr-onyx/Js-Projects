@@ -10,32 +10,33 @@
   <body>
     <div class="main-container">
       <h1>Update CSS Variables with JS</h1>
-      <div>
-        <label for=""
-          >Spacing:
-          <input type="range" name="" id="range_input" data-sizing="px" />
-        </label>
-      </div>
-      <div>
-        <label for=""
-          >Blur:
-          <input type="range" name="" id="range_input" data-sizing="px" />
-        </label>
-      </div>
-      <div>
-        <label for=""
-          >color:
-          <input type="color" name="" id="range_input" data-sizing="px" />
-        </label>
-      </div>
-      <div class="img-container">
-        <img
-          id="img-ctn"
+      <label>
+        Spacing:
+        <input
+          type="range"
+          class="range_input"
+          data-property="spacing"
           data-sizing="px"
-          src="https://www.w3schools.com/w3images/mountains.jpg"
-          alt=""
         />
-      </div>
+      </label>
+      <label>
+        Blur:
+        <input
+          type="range"
+          class="range_input"
+          data-property="blur"
+          data-sizing="px"
+        />
+      </label>
+      <label>
+        Color:
+        <input type="color" class="range_input" data-property="color" />
+      </label>
+      <img
+        id="img-ctn"
+        src="https://www.w3schools.com/w3images/mountains.jpg"
+        alt=""
+      />
     </div>
     <script src="./script.js"></script>
   </body>

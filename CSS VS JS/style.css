@@ -3,18 +3,26 @@
   padding: 0px;
   margin: 0px;
 }
+:root {
+  --spacing: 50px;
+  --blur: 0px;
+  --color: #000000;
+}
+
 img {
+  background-color: var(--color);
+  padding: var(--spacing);
+  filter: blur(var(--blur));
+}
+/* img {
   border-radius: 10px;
 }
+img {
+  width: 200px;
+} */
 .main-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 20px;
-}
-.img-container {
-  background-color: aquamarine;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
 }
