@@ -18,3 +18,22 @@ function myFunction() {
     }
   }
 }
+
+function checkConsecutive(N, arr) {
+  // Sort the array in ascending order
+  arr.sort((a, b) => a - b);
+
+  // Check if the elements are consecutive
+  for (let i = 1; i < N; i++) {
+    if (arr[i] !== arr[i - 1] + 1) {
+      return 0; // Not consecutive
+    }
+  }
+
+  return 1; // Consecutive
+}
+
+// Test cases
+
+console.log(checkConsecutive(6, [3, 7, 2, 5, 4, 6])); // Output: 1
+console.log(checkConsecutive(6, [1, 9, 2, 4, 0, 3])); // Output: 0
