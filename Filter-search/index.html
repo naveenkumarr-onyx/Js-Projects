@@ -21,13 +21,13 @@
     </style>
   </head>
   <body>
-    <input
+    <!-- <input
       type="text"
       id="myInput"
       onkeypress="myFunction()"
       placeholder="Search for names.."
-    />
-    <ul id="myUL">
+    /> -->
+    <!-- <ul id="myUL">
       <li><a href="#">Adele</a></li>
       <li><a href="#">Agnes</a></li>
       <li><a href="#">Billy</a></li>
@@ -35,7 +35,26 @@
       <li><a href="#">Calvin</a></li>
       <li><a href="#">Christina</a></li>
       <li><a href="#">Cindy</a></li>
-    </ul>
+    </ul> -->
+    <div id="filter"></div>
+    <div>
+      <div>
+        <input type="checkbox" name="" id="" onclick="check(event)" />
+        <label for="">New</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="" onclick="check(event)" />
+        <label for="">Delivered</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="" onclick="check(event)" />
+        <label for="">InTransit</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="" onclick="check(event)" />
+        <label for="">Packed</label>
+      </div>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>
