@@ -108,15 +108,91 @@ const orders = [
     orderStatus: "InTransit",
   },
 ];
-const filterDiv = document.getElementById("filter");
-const a = orders.filter((order) => (order.orderStatus = "New"));
+// const filterDiv = document.getElementById("filter");
+// const a = orders.filter((order) => (order.orderStatus = "New"));
 
-a.forEach((value, i) => {
-  var orderDiv = document.createElement("div");
-  orderDiv.textContent = `OrderId: ${value.id},Status: ${value.orderStatus}`;
-  filterDiv.appendChild(orderDiv);
-});
+// a.forEach((value) => {
+//   var orderDiv = document.createElement("div");
+//   orderDiv.textContent = `OrderId: ${value.id},Status: ${value.orderStatus}`;
+//   filterDiv.appendChild(orderDiv);
+// });
 
-function check(e) {
-  console.log(e);
+// function check(event) {
+//   if (event.target.checked) {
+//     a.forEach((value) => {
+//       var orderDiv = document.createElement("div");
+//       orderDiv.innerHTML = "";
+//       orderDiv.textContent = `OrderId: ${value.id},Status: ${value.orderStatus}`;
+//       filterDiv.appendChild(orderDiv);
+//     });
+//   } else {
+//     filterDiv.innerHTML = "";
+//   } else if (event.target.value === "2") {
+//     console.log("Delivered");
+//   } else if (event.target.value === "3") {
+//     console.log("InTransit");
+//   } else {
+//     console.log("Packed");
+//   }
+// }
+// function check(event) {
+//   if (event.target.checked) {
+//     a.forEach((value) => {
+//       var orderDiv = document.createElement("div");
+//       if (event.target.value === "New") {
+//         orderDiv.textContent = `OrderId: ${value.id}, Status: ${value.orderStatus}`;
+//         filterDiv.appendChild(orderDiv);
+//       } else if (
+//         event.target.value === "Delivered" &&
+//         value.orderStatus === "Delivered"
+//       ) {
+//         console.log(`OrderId: ${value.id}, Status: ${value.orderStatus}`);
+//       } else if (
+//         event.target.value === "InTransit" &&
+//         value.orderStatus === "InTransit"
+//       ) {
+//         console.log(`OrderId: ${value.id}, Status: ${value.orderStatus}`);
+//       } else if (
+//         event.target.value === "Packed" &&
+//         value.orderStatus === "Packed"
+//       ) {
+//         console.log(`OrderId: ${value.id}, Status: ${value.orderStatus}`);
+//       }
+//     });
+//   } else {
+//     filterDiv.innerHTML = "";
+//   }
+// }
+function filtering() {
+  const checkBox = Array.from(
+    document.querySelectorAll('input[type="checkBox"]:checked')
+  ).map((cb) => cb.value);
+  if (checkBox.length < 0) {
+    console.log(checkBox.length);
+  } else {
+    const filterOrders = orders.filter((order) =>
+      checkBox.includes(order.orderStatus)
+    );
+    displayItem(filterOrders);
+  }
+}
+function displayItem(filterOrders) {
+  const filteredOrdersDiv = document.getElementById("filteredOrders");
+  filteredOrdersDiv.innerHTML = "";
+  filterOrders.forEach((order) => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `<table >
+    <tr>
+      <th>ID</th>
+      <th>customerName</th>
+      <th>orderStatus}</th>
+    </tr>
+    <tr>
+      <td>${order.id}</td>
+      <td>${order.customerName}</td>
+      <td>${order.orderStatus}</td>
+    </tr>
+  </table>`;
+    filteredOrdersDiv.appendChild(listItem);
+  });
 }

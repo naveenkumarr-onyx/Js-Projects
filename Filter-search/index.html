@@ -37,24 +37,25 @@
       <li><a href="#">Cindy</a></li>
     </ul> -->
     <div id="filter"></div>
-    <div>
+    <div onclick="filtering()">
       <div>
-        <input type="checkbox" name="" id="" onclick="check(event)" />
+        <input type="checkbox" name="" id="checkbox1" value="New" />
         <label for="">New</label>
       </div>
       <div>
-        <input type="checkbox" name="" id="" onclick="check(event)" />
+        <input type="checkbox" name="" id="checkbox2" value="Delivered" />
         <label for="">Delivered</label>
       </div>
       <div>
-        <input type="checkbox" name="" id="" onclick="check(event)" />
+        <input type="checkbox" name="" id="checkbox3" value="InTransit" />
         <label for="">InTransit</label>
       </div>
       <div>
-        <input type="checkbox" name="" id="" onclick="check(event)" />
+        <input type="checkbox" name="" id="checkbox4" value="Packed" />
         <label for="">Packed</label>
       </div>
     </div>
+    <ul id="filteredOrders"></ul>
     <script src="./index.js"></script>
   </body>
 </html>
