@@ -121,16 +121,16 @@ function displayItem(filterOrders) {
     displayItemDiv.appendChild(filterDiv);
   });
 }
-document.querySelector("button").addEventListener("click", () => {
-  const eyeDropper = new EyeDropper();
-  var resultElement = document.getElementById("result");
-  eyeDropper
-    .open()
-    .then((result) => {
-      resultElement.textContent = result.sRGBHex;
-      resultElement.style.backgroundColor = result.sRGBHex;
-    })
-    .catch((e) => {
-      resultElement.textContent = e;
-    });
-});
+// document.querySelector("button").addEventListener("click", () => {
+//   const eyeDropper = new EyeDropper();
+//   var resultElement = document.getElementById("result");
+//   eyeDropper
+//     .open()
+//     .then((result) => {
+//       resultElement.textContent = result.sRGBHex;
+//       resultElement.style.backgroundColor = result.sRGBHex;
+//     })
+//     .catch((e) => {
+//       resultElement.textContent = e;
+//     });
+// });
