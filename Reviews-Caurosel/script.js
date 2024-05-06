@@ -5,7 +5,7 @@ const reviews = [
     author: "SUSAN DOE",
     role: "Developer",
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatibus maxime impedit fugit laborum dolores dolorem tota",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab doloribus sequi neque. Ut molestias tempore beatae debitis magnam impedit magni molestiae soluta commodi saepe neque consectetur veritatis perferendis, sunt ab ea. Quaerat porro sequi ad.",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const reviews = [
     author: "PETER DOE",
     role: "Product Manager",
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatibus maxime impedit fugit laborum dolores dolorem tota",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis soluta, harum doloribus explicabo eos aspernatur non error eaque veritatis, sequi quae enim amet iste hic, est provident neque tempora! Debitis vero a dolorum unde reprehenderit?",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const reviews = [
     author: "LINC DOE",
     role: "Data Analyst",
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatibus maxime impedit fugit laborum dolores dolorem tota",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima atque expedita aspernatur hic! Quam maiores tempora cumque obcaecati nihil voluptatem dolorum ipsam iure modi eos? Eveniet nesciunt ipsam quos exped",
   },
   {
     id: 5,
@@ -37,17 +37,17 @@ const reviews = [
     author: "EMILY CLERK",
     role: "Digital Marketing",
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatibus maxime impedit fugit laborum dolores dolorem tota",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore illo vitae, ut sapiente tenetur necessitatibus quis, deserunt nulla ex earum eos modi odit id culpa nam, aut placeat totam.",
   },
 ];
 
 function showCard(index) {
-  const cardElements = document.querySelectorAll("main");
-  cardElements.forEach((index) => {
-    if (index === 0) {
-      cardElements.style.display = "flex";
+  const cardElements = document.querySelectorAll(".container > main");
+  cardElements.forEach((value, i) => {
+    if (i === index) {
+      value.style.display = "flex";
     } else {
-      cardElements.style.display = "none";
+      value.style.display = "none";
     }
   });
 }
@@ -55,6 +55,11 @@ function showCard(index) {
 let currentIndex = 0;
 function showNextCard() {
   currentIndex = (currentIndex + 1) % reviews.length;
+  console.log(currentIndex);
+  showCard(currentIndex);
+}
+function prevCard() {
+  currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
   showCard(currentIndex);
 }
 
@@ -75,8 +80,7 @@ reviews.forEach((value, index) => {
             <h3 id="author">${value.author}</h3>
             <h3 id="job">${value.role}</h3>
             <p id="info">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatibus maxime impedit fugit laborum dolores dolorem tota
+              ${value.review}
             </p>
           </div>
           <div class="btn-div">
@@ -101,4 +105,5 @@ reviews.forEach((value, index) => {
     a.style.display = "none";
   }
   a.querySelector(".next-btn").addEventListener("click", showNextCard);
+  a.querySelector(".prev-btn").addEventListener("click", prevCard);
 });
