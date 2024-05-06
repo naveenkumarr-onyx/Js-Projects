@@ -84,7 +84,7 @@ img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 5px solid #fff;
   box-shadow: var(--dark-shadow);
 }
 /* Review */
@@ -121,6 +121,7 @@ article .info-div h3:nth-child(2) {
   font-weight: 500;
 }
 article .info-div p {
+  width: 400px;
   line-height: 25px;
   text-align: center;
   color: var(--clr-grey-7);
@@ -151,6 +152,13 @@ article .btn-div .next-btn {
   .container {
     max-width: 350px;
     padding: 0px;
+  }
+  article .info-div p {
+    width: 330px;
+    line-height: 25px;
+    text-align: center;
+    color: var(--clr-grey-7);
+    font-family: var(--ff-primary);
   }
   article .btn-div .prev-btn {
     position: absolute;
