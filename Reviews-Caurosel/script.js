@@ -52,7 +52,7 @@ function showCard(index) {
   });
 }
 
-let currentIndex = 0;
+var currentIndex = 0;
 function showNextCard() {
   currentIndex = (currentIndex + 1) % reviews.length;
   showCard(currentIndex);
@@ -65,7 +65,6 @@ function prevCard() {
 reviews.forEach((value, index) => {
   var a = document.createElement("main");
   var b = document.querySelector(".container");
-  a.innerHTML = "";
   a.innerHTML = `
   <h2>Reviews</h2>
         <article>
@@ -83,10 +82,10 @@ reviews.forEach((value, index) => {
             </p>
           </div>
           <div class="btn-div">
-            <button class="prev-btn">
+            <button class="prev-btn active">
               <i class="fas fa-chevron-left"></i>
             </button>
-            <button class="next-btn">
+            <button class="next-btn active">
               <i class="fas fa-chevron-right"></i>
             </button>
           </div>
