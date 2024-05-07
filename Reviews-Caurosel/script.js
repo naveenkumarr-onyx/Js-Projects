@@ -55,7 +55,6 @@ function showCard(index) {
 let currentIndex = 0;
 function showNextCard() {
   currentIndex = (currentIndex + 1) % reviews.length;
-  console.log(currentIndex);
   showCard(currentIndex);
 }
 function prevCard() {
