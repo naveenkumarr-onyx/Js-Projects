@@ -1,0 +1,7 @@
+@font-face {
+  font-family: myFont;
+  src: url(SunTommy\ y\ Tamil\ Normal.ttf);
+}
+* {
+  font-family: myFont, Helvetica, sans-serif;
+}
